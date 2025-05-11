@@ -6,3 +6,4 @@ edition = "2024"
 [dependencies]
 baml-runtime = { path = "baml/engine/baml-runtime" }
 baml-types = { path = "baml/engine/baml-lib/baml-types" }
+colored = "2.0"
