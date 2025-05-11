@@ -10,9 +10,7 @@ fn main() {
     println!("{}", "--------------------------------".yellow().bold());
     stream_test_return_string();
     println!("{}", "--------------------------------".yellow().bold());
-    stream_test_return_string2();
-    println!("{}", "--------------------------------".yellow().bold());
-    stream_test_create_persona();
+    stream_test_return_struct_with_string();
     println!("{}", "--------------------------------".yellow().bold());
 }
 
@@ -40,7 +38,7 @@ fn stream_test_return_string() {
     stream("ReturnString".to_string(), params);
 }
 
-fn stream_test_return_string2() {
+fn stream_test_return_struct_with_string() {
     // Example parameters
     // {user: {name: "John Doe"}}
     let mut params = BamlMap::new();
@@ -49,22 +47,7 @@ fn stream_test_return_string2() {
         BamlValue::String("John Doe".to_string()),
     );
 
-    stream("ReturnString2".to_string(), params);
-}
-
-fn stream_test_create_persona() {
-    // Example parameters
-    // {user: {name: "John Doe"}}
-    let mut params = BamlMap::new();
-    let mut person = BamlMap::new();
-    person.insert(
-        "name".to_string(),
-        BamlValue::String("John Doe".to_string()),
-    );
-    person.insert("age".to_string(), BamlValue::Int(30));
-    params.insert("person".to_string(), BamlValue::Map(person));
-
-    stream("CreatePersona".to_string(), params);
+    stream("ReturnStructWithString".to_string(), params);
 }
 
 fn stream(function_name: String, params: BamlMap<String, BamlValue>) {

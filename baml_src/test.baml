@@ -27,31 +27,10 @@ class MyString {
   value string
 }
 
-function ReturnString2(name: string) -> MyString {
+function ReturnStructWithString(name: string) -> MyString {
   client GPT4
   prompt #"
   Return just the first 2 characters of {{name}}
   {{ ctx.output_format }}
   "#
-}
-
-class Person {
-    name string
-    age int
-}
-
-class Persona {
-    value string
-}
-
-function CreatePersona(person: Person) -> Persona {
-    client GPT4
-    prompt #"
-        Create a persona for the following person in 50 characters or less:
-
-        Person:
-        {{ person }}
-
-        {{ ctx.output_format }}
-    "#
 }
