@@ -4,3 +4,5 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+baml-runtime = { path = "baml/engine/baml-runtime" }
+baml-types = { path = "baml/engine/baml-lib/baml-types" }
